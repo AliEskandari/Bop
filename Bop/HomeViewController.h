@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface FirstViewController : UITableViewController
+@interface HomeViewController : UITableViewController
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *ComposeButton;
 @property (weak, nonatomic) IBOutlet UITableView *table;
 - (IBAction)OnComposePressed:(id)sender;

@@ -12,7 +12,7 @@
 		2558FE881AC84DB2002FDD2A /* SongCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2558FE871AC84DB2002FDD2A /* SongCell.m */; };
 		419845D31AC7A57F004EF7C3 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 419845D21AC7A57F004EF7C3 /* main.m */; };
 		419845D61AC7A57F004EF7C3 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 419845D51AC7A57F004EF7C3 /* AppDelegate.m */; };
-		419845D91AC7A57F004EF7C3 /* FirstViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 419845D81AC7A57F004EF7C3 /* FirstViewController.m */; };
+		419845D91AC7A57F004EF7C3 /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 419845D81AC7A57F004EF7C3 /* HomeViewController.m */; };
 		419845DC1AC7A57F004EF7C3 /* SecondViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 419845DB1AC7A57F004EF7C3 /* SecondViewController.m */; };
 		419845DF1AC7A57F004EF7C3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 419845DD1AC7A57F004EF7C3 /* Main.storyboard */; };
 		419845E11AC7A57F004EF7C3 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 419845E01AC7A57F004EF7C3 /* Images.xcassets */; };
@@ -66,8 +66,8 @@
 		419845D21AC7A57F004EF7C3 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		419845D41AC7A57F004EF7C3 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		419845D51AC7A57F004EF7C3 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		419845D71AC7A57F004EF7C3 /* FirstViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FirstViewController.h; sourceTree = "<group>"; };
-		419845D81AC7A57F004EF7C3 /* FirstViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FirstViewController.m; sourceTree = "<group>"; };
+		419845D71AC7A57F004EF7C3 /* HomeViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HomeViewController.h; sourceTree = "<group>"; };
+		419845D81AC7A57F004EF7C3 /* HomeViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HomeViewController.m; sourceTree = "<group>"; };
 		419845DA1AC7A57F004EF7C3 /* SecondViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SecondViewController.h; sourceTree = "<group>"; };
 		419845DB1AC7A57F004EF7C3 /* SecondViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SecondViewController.m; sourceTree = "<group>"; };
 		419845DE1AC7A57F004EF7C3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -239,8 +239,8 @@
 		41F7AF2C1AC7BF2C009EC6E0 /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				419845D71AC7A57F004EF7C3 /* FirstViewController.h */,
-				419845D81AC7A57F004EF7C3 /* FirstViewController.m */,
+				419845D71AC7A57F004EF7C3 /* HomeViewController.h */,
+				419845D81AC7A57F004EF7C3 /* HomeViewController.m */,
 				419845DA1AC7A57F004EF7C3 /* SecondViewController.h */,
 				419845DB1AC7A57F004EF7C3 /* SecondViewController.m */,
 				41F7AF321AC7BFF6009EC6E0 /* ComposeViewController.h */,
@@ -435,7 +435,7 @@
 				419845DC1AC7A57F004EF7C3 /* SecondViewController.m in Sources */,
 				41D3D8D61AC7E693006DE655 /* PostTableViewCell.m in Sources */,
 				419845D61AC7A57F004EF7C3 /* AppDelegate.m in Sources */,
-				419845D91AC7A57F004EF7C3 /* FirstViewController.m in Sources */,
+				419845D91AC7A57F004EF7C3 /* HomeViewController.m in Sources */,
 				41D3D8D21AC7E52E006DE655 /* SearchResultTableViewCell.m in Sources */,
 				41F7AF311AC7BFCB009EC6E0 /* ComposeViewController.m in Sources */,
 				41D3D8DB1AC83DEF006DE655 /* GTLCommon_Sources.m in Sources */,

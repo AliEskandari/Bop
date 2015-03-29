@@ -6,17 +6,17 @@
 //  Copyright (c) 2015 jab. All rights reserved.
 //
 
-#import "FirstViewController.h"
+#import "HomeViewController.h"
 #import "SongCell.h"
 #import <Parse/Parse.h>
 
-@interface FirstViewController ()
+@interface HomeViewController ()
 @end
 
 NSString *const tableCellNibName = @"SongCell";
 NSString *const cellID = @"SongCellID";
 
-@implementation FirstViewController
+@implementation HomeViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
