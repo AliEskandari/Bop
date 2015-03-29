@@ -47,7 +47,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="ComposeButton" destination="04p-iz-BYy" id="Z7a-qK-hpa"/>
-                        <segue destination="VrT-z2-FPu" kind="presentation" identifier="ComposeSegue" modalPresentationStyle="fullScreen" id="l0j-hf-8TM"/>
+                        <segue destination="VrT-z2-FPu" kind="presentation" identifier="ComposeSegue" id="l0j-hf-8TM"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="W5J-7L-Pyd" sceneMemberID="firstResponder"/>
@@ -57,6 +57,15 @@
         <!--Compose View Controller-->
         <scene sceneID="Wx1-Qx-v8d">
             <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="zBP-E8-Bip" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <searchDisplayController id="3Ph-DM-flh">
+                    <connections>
+                        <outlet property="delegate" destination="VrT-z2-FPu" id="EQ8-eq-1wJ"/>
+                        <outlet property="searchContentsController" destination="VrT-z2-FPu" id="Ye5-yA-SaF"/>
+                        <outlet property="searchResultsDataSource" destination="VrT-z2-FPu" id="bbM-Hv-HVO"/>
+                        <outlet property="searchResultsDelegate" destination="VrT-z2-FPu" id="Xzz-HA-kXC"/>
+                    </connections>
+                </searchDisplayController>
                 <viewController modalPresentationStyle="currentContext" id="VrT-z2-FPu" customClass="ComposeViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="pNL-IY-WqM"/>
@@ -65,33 +74,12 @@
                     <view key="view" contentMode="scaleToFill" id="JCX-FQ-tC7">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JaD-sr-5fT">
-                                <rect key="frame" x="0.0" y="20" width="600" height="44"/>
-                                <items>
-                                    <navigationItem title="Compose" id="f4q-Wx-BMe">
-                                        <barButtonItem key="leftBarButtonItem" title="Cancel" id="Pyv-IX-rK4">
-                                            <connections>
-                                                <action selector="OnCancelPressed:" destination="VrT-z2-FPu" id="eAE-fw-P82"/>
-                                            </connections>
-                                        </barButtonItem>
-                                        <barButtonItem key="rightBarButtonItem" title="Send" id="cd3-3w-dRN"/>
-                                    </navigationItem>
-                                </items>
-                            </navigationBar>
-                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstAttribute="trailing" secondItem="JaD-sr-5fT" secondAttribute="trailing" id="M7t-pi-lR3"/>
-                            <constraint firstItem="JaD-sr-5fT" firstAttribute="leading" secondItem="JCX-FQ-tC7" secondAttribute="leading" id="OFj-8p-Liy"/>
-                            <constraint firstItem="JaD-sr-5fT" firstAttribute="top" secondItem="pNL-IY-WqM" secondAttribute="bottom" id="tuH-8r-86X"/>
-                        </constraints>
                     </view>
                     <connections>
-                        <outlet property="CancelButton" destination="Pyv-IX-rK4" id="EWc-Pz-Et4"/>
+                        <outlet property="searchDisplayController" destination="3Ph-DM-flh" id="Qfa-o1-grl"/>
                     </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="zBP-E8-Bip" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2280" y="-320"/>
         </scene>

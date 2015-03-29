@@ -10,10 +10,13 @@
 #define Bop_ComposeViewController_h
 
 #import <UIKit/UIKit.h>
+#import "BaseTableViewController.h"
 
 @interface ComposeViewController : UIViewController
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *CancelButton;
 - (IBAction)OnCancelPressed:(id)sender;
+
+@property (nonatomic, copy) NSArray *videos;
 
 @end
 
