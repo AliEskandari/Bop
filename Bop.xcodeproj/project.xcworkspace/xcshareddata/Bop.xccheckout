@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>BB8DF10C-E372-435F-A3CE-1D87682DA8EF</string>
+	<key>IDESourceControlProjectName</key>
+	<string>Bop</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>BF29D2915782B875EBC946F9A9DCE9C1F40F1774</key>
+		<string>https://github.com/AliEskandari/Bop.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>Bop.xcodeproj</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>BF29D2915782B875EBC946F9A9DCE9C1F40F1774</key>
+		<string>../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/AliEskandari/Bop.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>111</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>BF29D2915782B875EBC946F9A9DCE9C1F40F1774</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>BF29D2915782B875EBC946F9A9DCE9C1F40F1774</string>
+			<key>IDESourceControlWCCName</key>
+			<string>Bop</string>
+		</dict>
+	</array>
+</dict>
+</plist>
