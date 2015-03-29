@@ -11,6 +11,7 @@
 
 #import <UIKit/UIKit.h>
 #import "BaseTableViewController.h"
+#import "GTLYouTube.h"
 
 @interface ComposeViewController : BaseTableViewController
 

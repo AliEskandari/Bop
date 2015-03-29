@@ -18,6 +18,9 @@
 // our secondary search results table view
 @property (nonatomic, strong) ResultsTableViewController *resultsTableViewController;
 
+// Accessor for the app's single instance of the service object.
+@property (nonatomic, readonly) GTLServiceYouTube *youTubeService;
+
 // for state restoration
 @property BOOL searchControllerWasActive;
 @property BOOL searchControllerSearchFieldWasFirstResponder;
@@ -214,5 +217,63 @@
 
 - (void)searchBarSearchButtonClicked:(UISearchBar *)searchBar {
     [searchBar resignFirstResponder];
+
+    NSString *searchText = searchBar.text;
+    // strip out all the leading and trailing spaces
+    NSString *strippedString = [searchText stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]];
+    
+    // Create a service object for executing queries
+    GTLServiceYouTube *service = self.youTubeService;
+    
+    // Create a query
+    GTLQueryYouTube *query = [GTLQueryYouTube queryForSearchListWithPart:@"snippet"];
+    query.q = strippedString;
+    query.maxResults = 15;
+    // Execute the query
+    GTLServiceTicket *ticket = [service executeQuery:query
+                                   completionHandler:^(GTLServiceTicket *ticket, id object, NSError *error) {
+                                       // This callback block is run when the fetch completes
+                                       if (error == nil) {
+                                           GTLYouTubeSearchListResponse *videos = object;
+                                           NSArray *items = videos.items;  // of GTLYouTubeSearchResult
+                                           for (GTLYouTubeSearchResult *result in items) {
+                                               NSLog(@"%@", result.snippet.title);
+                                           }
+                                       }
+                                   }];
+  // should be doing something like this // GTLServiceYouTube *service = self.youTubeService;
+    
 }
+
+
+// Get a service object with the current username/password.
+//
+// A "service" object handles networking tasks.  Service objects
+// contain user authentication information as well as networking
+// state information such as cookies set by the server in response
+// to queries.
+
+- (GTLServiceYouTube *)youTubeService {
+    static GTLServiceYouTube *service;
+    
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        service = [[GTLServiceYouTube alloc] init];
+        
+        // Have the service object set tickets to fetch consecutive pages
+        // of the feed so we do not need to manually fetch them.
+        //service.shouldFetchNextPages = YES;
+        
+        // Have the service object set tickets to retry temporary error conditions
+        // automatically.
+        service.retryEnabled = YES;
+        
+        // Services which do not require sign-in may need an API key from the
+        // API Console
+        service.APIKey = @"AIzaSyAPGx5PbhdoO2QTR16yZHgMj-Q2vqO8W1M";
+
+    });
+    return service;
+}
+
 @end
