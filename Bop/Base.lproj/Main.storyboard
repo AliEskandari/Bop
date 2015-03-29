@@ -47,41 +47,12 @@
                     </navigationItem>
                     <connections>
                         <outlet property="ComposeButton" destination="04p-iz-BYy" id="Z7a-qK-hpa"/>
-                        <segue destination="VrT-z2-FPu" kind="presentation" identifier="ComposeSegue" id="l0j-hf-8TM"/>
+                        <segue destination="pXf-zn-5TY" kind="presentation" identifier="ComposeSegue" id="l0j-hf-8TM"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="W5J-7L-Pyd" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1562" y="-320"/>
-        </scene>
-        <!--Compose View Controller-->
-        <scene sceneID="Wx1-Qx-v8d">
-            <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="zBP-E8-Bip" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <searchDisplayController id="3Ph-DM-flh">
-                    <connections>
-                        <outlet property="delegate" destination="VrT-z2-FPu" id="EQ8-eq-1wJ"/>
-                        <outlet property="searchContentsController" destination="VrT-z2-FPu" id="Ye5-yA-SaF"/>
-                        <outlet property="searchResultsDataSource" destination="VrT-z2-FPu" id="bbM-Hv-HVO"/>
-                        <outlet property="searchResultsDelegate" destination="VrT-z2-FPu" id="Xzz-HA-kXC"/>
-                    </connections>
-                </searchDisplayController>
-                <viewController modalPresentationStyle="currentContext" id="VrT-z2-FPu" customClass="ComposeViewController" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="pNL-IY-WqM"/>
-                        <viewControllerLayoutGuide type="bottom" id="FHc-Lt-2u8"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="JCX-FQ-tC7">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                    <connections>
-                        <outlet property="searchDisplayController" destination="3Ph-DM-flh" id="Qfa-o1-grl"/>
-                    </connections>
-                </viewController>
-            </objects>
-            <point key="canvasLocation" x="2280" y="-320"/>
         </scene>
         <!--Second-->
         <scene sceneID="wg7-f3-ORb">
@@ -160,6 +131,52 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9hG-9m-cRT" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="750" y="-320"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="hRB-E6-P3P">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="pXf-zn-5TY" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Ecq-jZ-Idh">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="yKp-X4-dQF" kind="relationship" relationship="rootViewController" id="3CE-dB-iVF"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="cD5-vS-yib" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2280" y="-320"/>
+        </scene>
+        <!--Compose-->
+        <scene sceneID="MdQ-MS-Ube">
+            <objects>
+                <tableViewController id="yKp-X4-dQF" customClass="ComposeViewController" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="ixS-vP-W8X">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <connections>
+                            <outlet property="dataSource" destination="yKp-X4-dQF" id="huV-zG-U0R"/>
+                            <outlet property="delegate" destination="yKp-X4-dQF" id="gTt-Nf-Lw0"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Compose" id="Ccc-Yj-CgE">
+                        <barButtonItem key="leftBarButtonItem" title="Cancel" id="UG1-J2-OIh">
+                            <connections>
+                                <action selector="OnCancelPressed:" destination="yKp-X4-dQF" id="Mxu-ei-yec"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="CancelButton" destination="UG1-J2-OIh" id="UoL-D1-VSz"/>
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="aBM-sr-lp4" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3043" y="-320"/>
         </scene>
     </scenes>
     <resources>

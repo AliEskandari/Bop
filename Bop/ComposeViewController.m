@@ -29,12 +29,12 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
     
-    
     _resultsTableViewController = [[ResultsTableViewController alloc] init];
     _searchController = [[UISearchController alloc] initWithSearchResultsController: self.resultsTableViewController];
     self.searchController.searchResultsUpdater = self;
     [self.searchController.searchBar sizeToFit];
     [self.view addSubview: self.searchController.searchBar];
+    self.tableView.tableHeaderView = self.searchController.searchBar;
     self.searchController.hidesNavigationBarDuringPresentation = true;
 
 
@@ -48,7 +48,6 @@
     // Search is now just presenting a view controller. As such, normal view controller
     // presentation semantics apply. Namely that presentation will walk up the view controller
     // hierarchy until it finds the root view controller or one that defines a presentation context.
-    //
     self.definesPresentationContext = YES;  // know where you want UISearchController to be displayed
 }
 

@@ -12,11 +12,12 @@
 #import <UIKit/UIKit.h>
 #import "BaseTableViewController.h"
 
-@interface ComposeViewController : UIViewController
-@property (weak, nonatomic) IBOutlet UIBarButtonItem *CancelButton;
-- (IBAction)OnCancelPressed:(id)sender;
+@interface ComposeViewController : BaseTableViewController
 
+@property (weak, nonatomic) IBOutlet UIBarButtonItem *CancelButton;
 @property (nonatomic, copy) NSArray *videos;
+
+- (IBAction)OnCancelPressed:(id)sender;
 
 @end
 
