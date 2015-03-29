@@ -9,7 +9,8 @@
 #import <UIKit/UIKit.h>
 
 @interface FirstViewController : UIViewController
-
+@property (weak, nonatomic) IBOutlet UIBarButtonItem *ComposeButton;
+- (IBAction)OnComposePressed:(id)sender;
 
 @end
 

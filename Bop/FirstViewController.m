@@ -19,9 +19,10 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
     
-    PFObject *testObject = [PFObject objectWithClassName:@"TestObject"];
-    testObject[@"foo"] = @"bar";
-    [testObject saveInBackground];
+    
+//    PFObject *testObject = [PFObject objectWithClassName:@"TestObject"];
+//    testObject[@"foo"] = @"bar";
+//    [testObject saveInBackground];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -29,4 +30,7 @@
     // Dispose of any resources that can be recreated.
 }
 
+- (IBAction)OnComposePressed:(id)sender {
+    [self performSegueWithIdentifier:@"ComposeSegue" sender:self];
+}
 @end
