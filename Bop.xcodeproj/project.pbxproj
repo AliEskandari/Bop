@@ -171,13 +171,11 @@
 				2558FE841AC7E795002FDD2A /* placeholder.png */,
 				419845D41AC7A57F004EF7C3 /* AppDelegate.h */,
 				419845D51AC7A57F004EF7C3 /* AppDelegate.m */,
-				41F7AF2C1AC7BF2C009EC6E0 /* View Controllers */,
-				419845DD1AC7A57F004EF7C3 /* Main.storyboard */,
-				419845E01AC7A57F004EF7C3 /* Images.xcassets */,
-				41D3D8CD1AC7E2EA006DE655 /* Table View Cells */,
-				419845E21AC7A57F004EF7C3 /* LaunchScreen.xib */,
-				419845D01AC7A57F004EF7C3 /* Supporting Files */,
 				41D3D8CC1AC7E2DA006DE655 /* Classes */,
+				41D3D8CD1AC7E2EA006DE655 /* Table View Cells */,
+				41F7AF2C1AC7BF2C009EC6E0 /* View Controllers */,
+				419845D01AC7A57F004EF7C3 /* Supporting Files */,
+				419845E21AC7A57F004EF7C3 /* LaunchScreen.xib */,
 			);
 			path = Bop;
 			sourceTree = "<group>";
@@ -188,6 +186,8 @@
 				41D3D8DD1AC83EE4006DE655 /* GTLYouTube_Sources.m */,
 				41D3D8D91AC83DEF006DE655 /* GTLCommon_Sources.m */,
 				41D3D8DA1AC83DEF006DE655 /* GTLNetworking_Sources.m */,
+				419845E01AC7A57F004EF7C3 /* Images.xcassets */,
+				419845DD1AC7A57F004EF7C3 /* Main.storyboard */,
 				419845D11AC7A57F004EF7C3 /* Info.plist */,
 				419845D21AC7A57F004EF7C3 /* main.m */,
 			);

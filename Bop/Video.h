@@ -11,7 +11,8 @@
 @interface Video : NSObject
 
 @property (nonatomic, copy) NSString *title;
+@property (nonatomic, copy) NSURL *thumbnailURL;
 
-+ (Video *)videoWithTitle:(NSString *)title;
++ (Video *)videoWithTitle:(NSString *)title thumbnailURL:(NSURL *) thumbnailURL;
 
 @end

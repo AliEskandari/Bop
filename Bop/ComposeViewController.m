@@ -43,8 +43,7 @@ NSString *const kPostTableViewCellNibName = @"PostTableViewCell";
     [self.searchController.searchBar sizeToFit];
     self.tableView.tableHeaderView = self.searchController.searchBar;
     self.searchController.hidesNavigationBarDuringPresentation = true;
-
-
+    
     
     // we want to be the delegate for our filtered table so didSelectRowAtIndexPath is called for both tables
     self.resultsTableViewController.tableView.delegate = self;
@@ -114,6 +113,14 @@ NSString *const kPostTableViewCellNibName = @"PostTableViewCell";
     [self configureCell:cell forVideo:video];
 
     return cell;
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    if (tableView != self.tableView) {
+        return 80;
+    } else {
+        return 100;
+    }
 }
 
 // here we are the table view delegate for both our main table and filtered table, so we can

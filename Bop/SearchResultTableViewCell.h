@@ -10,5 +10,6 @@
 
 @interface SearchResultTableViewCell : UITableViewCell
 @property (weak, nonatomic) IBOutlet UILabel *titleLabel;
+@property (weak, nonatomic) IBOutlet UIImageView *videoThumbnailImageView;
 
 @end

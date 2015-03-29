@@ -41,7 +41,8 @@ NSString *const kSearchResultTableViewCellNibName = @"SearchResultTableViewCell"
     SearchResultTableViewCell *cell = (SearchResultTableViewCell *)[self.tableView dequeueReusableCellWithIdentifier:kSearchResultTableViewCellIdentifier];
     
     GTLYouTubeSearchResult *result = self.filteredVideos[indexPath.row];
-    Video *video = [Video videoWithTitle:result.snippet.title];
+    NSURL *url = [[NSURL alloc] initWithString:result.snippet.thumbnails.defaultProperty.url];
+    Video *video = [Video videoWithTitle:result.snippet.title thumbnailURL:url];
     
     [self configureCell:cell forVideo:video];
 
@@ -50,7 +51,10 @@ NSString *const kSearchResultTableViewCellNibName = @"SearchResultTableViewCell"
 
 - (void)configureCell:(SearchResultTableViewCell *)cell forVideo:(Video *)video {
     cell.titleLabel.text = video.title;
+    cell.videoThumbnailImageView.image = [UIImage imageWithData:[NSData dataWithContentsOfURL: video.thumbnailURL]];
+    
 }
+
 
 /*
 #pragma mark - Navigation
