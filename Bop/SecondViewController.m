@@ -29,11 +29,37 @@
                                  };
     self.playerView.delegate = self;
     [self.playerView loadWithVideoId:videoId playerVars:playerVars];
+    [self.playerView pauseVideo];
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector: @selector(enteredBackground:)
+                                                 name: @"enteredBackgroundEvent"
+                                               object: nil];
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+
+
+- (void)playerView:(YTPlayerView *)playerView didChangeToState:(YTPlayerState)state {
+    switch (state) {
+        case kYTPlayerStatePlaying:
+            NSLog(@"Started playback");
+            break;
+        case kYTPlayerStatePaused:
+            NSLog(@"Paused playback");
+            //[self.playerView playVideo];
+            break;
+        default:
+            break;
+    }
+}
+
+- (void)enteredBackground:(NSNotification * )notification {
+    NSLog(@"Entered Background and resuming playback");
+    [self.playerView playVideo];
+}
+
 
 @end

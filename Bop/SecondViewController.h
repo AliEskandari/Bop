@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "YTPlayerView.h"
+@import AVFoundation;
 
 @interface SecondViewController : UIViewController<YTPlayerViewDelegate>
 
