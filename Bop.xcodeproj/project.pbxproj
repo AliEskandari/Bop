@@ -15,6 +15,8 @@
 		419845E11AC7A57F004EF7C3 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 419845E01AC7A57F004EF7C3 /* Images.xcassets */; };
 		419845E41AC7A57F004EF7C3 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 419845E21AC7A57F004EF7C3 /* LaunchScreen.xib */; };
 		419845F01AC7A57F004EF7C3 /* BopTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 419845EF1AC7A57F004EF7C3 /* BopTests.m */; };
+		419845FB1AC7A89F004EF7C3 /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 419845F91AC7A89F004EF7C3 /* Bolts.framework */; };
+		419845FC1AC7A89F004EF7C3 /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 419845FA1AC7A89F004EF7C3 /* Parse.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -43,6 +45,8 @@
 		419845E91AC7A57F004EF7C3 /* BopTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BopTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		419845EE1AC7A57F004EF7C3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		419845EF1AC7A57F004EF7C3 /* BopTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BopTests.m; sourceTree = "<group>"; };
+		419845F91AC7A89F004EF7C3 /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Bolts.framework; sourceTree = "<group>"; };
+		419845FA1AC7A89F004EF7C3 /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Parse.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -50,6 +54,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				419845FC1AC7A89F004EF7C3 /* Parse.framework in Frameworks */,
+				419845FB1AC7A89F004EF7C3 /* Bolts.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -66,6 +72,8 @@
 		419845C41AC7A57F004EF7C3 = {
 			isa = PBXGroup;
 			children = (
+				419845F91AC7A89F004EF7C3 /* Bolts.framework */,
+				419845FA1AC7A89F004EF7C3 /* Parse.framework */,
 				419845CF1AC7A57F004EF7C3 /* Bop */,
 				419845EC1AC7A57F004EF7C3 /* BopTests */,
 				419845CE1AC7A57F004EF7C3 /* Products */,
@@ -349,6 +357,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = Bop/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -359,6 +371,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = Bop/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -418,6 +434,7 @@
 				419845F51AC7A57F004EF7C3 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		419845F61AC7A57F004EF7C3 /* Build configuration list for PBXNativeTarget "BopTests" */ = {
 			isa = XCConfigurationList;
@@ -426,6 +443,7 @@
 				419845F81AC7A57F004EF7C3 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
