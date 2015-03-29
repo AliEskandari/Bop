@@ -138,6 +138,9 @@
 		23A97E951AC7DF4300B9155A /* GTLYouTubeVideoTopicDetails.m in Sources */ = {isa = PBXBuildFile; fileRef = 23A97E111AC7DF4300B9155A /* GTLYouTubeVideoTopicDetails.m */; };
 		23A97E961AC7DF4300B9155A /* GTLYouTubeWatchSettings.m in Sources */ = {isa = PBXBuildFile; fileRef = 23A97E131AC7DF4300B9155A /* GTLYouTubeWatchSettings.m */; };
 		23A97E981AC7DFE300B9155A /* libGTLTouchStaticLib.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 23A97D0B1AC7DEB300B9155A /* libGTLTouchStaticLib.a */; };
+		2558FE831AC7E74C002FDD2A /* SongCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2558FE821AC7E74C002FDD2A /* SongCell.xib */; };
+		2558FE851AC7E795002FDD2A /* placeholder.png in Resources */ = {isa = PBXBuildFile; fileRef = 2558FE841AC7E795002FDD2A /* placeholder.png */; };
+		2558FE881AC84DB2002FDD2A /* SongCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2558FE871AC84DB2002FDD2A /* SongCell.m */; };
 		419845D31AC7A57F004EF7C3 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 419845D21AC7A57F004EF7C3 /* main.m */; };
 		419845D61AC7A57F004EF7C3 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 419845D51AC7A57F004EF7C3 /* AppDelegate.m */; };
 		419845D91AC7A57F004EF7C3 /* FirstViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 419845D81AC7A57F004EF7C3 /* FirstViewController.m */; };
@@ -468,6 +471,10 @@
 		23A97E111AC7DF4300B9155A /* GTLYouTubeVideoTopicDetails.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GTLYouTubeVideoTopicDetails.m; sourceTree = "<group>"; };
 		23A97E121AC7DF4300B9155A /* GTLYouTubeWatchSettings.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GTLYouTubeWatchSettings.h; sourceTree = "<group>"; };
 		23A97E131AC7DF4300B9155A /* GTLYouTubeWatchSettings.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GTLYouTubeWatchSettings.m; sourceTree = "<group>"; };
+		2558FE821AC7E74C002FDD2A /* SongCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SongCell.xib; sourceTree = "<group>"; };
+		2558FE841AC7E795002FDD2A /* placeholder.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = placeholder.png; sourceTree = "<group>"; };
+		2558FE861AC84DB2002FDD2A /* SongCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SongCell.h; sourceTree = "<group>"; };
+		2558FE871AC84DB2002FDD2A /* SongCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SongCell.m; sourceTree = "<group>"; };
 		419845CD1AC7A57F004EF7C3 /* Bop.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Bop.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		419845D11AC7A57F004EF7C3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		419845D21AC7A57F004EF7C3 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -890,10 +897,12 @@
 		419845CF1AC7A57F004EF7C3 /* Bop */ = {
 			isa = PBXGroup;
 			children = (
+				2558FE841AC7E795002FDD2A /* placeholder.png */,
 				419845D41AC7A57F004EF7C3 /* AppDelegate.h */,
 				419845D51AC7A57F004EF7C3 /* AppDelegate.m */,
 				41F7AF2C1AC7BF2C009EC6E0 /* View Controllers */,
 				419845DD1AC7A57F004EF7C3 /* Main.storyboard */,
+				2558FE821AC7E74C002FDD2A /* SongCell.xib */,
 				419845E01AC7A57F004EF7C3 /* Images.xcassets */,
 				419845E21AC7A57F004EF7C3 /* LaunchScreen.xib */,
 				419845D01AC7A57F004EF7C3 /* Supporting Files */,
@@ -934,6 +943,8 @@
 			children = (
 				419845D71AC7A57F004EF7C3 /* FirstViewController.h */,
 				419845D81AC7A57F004EF7C3 /* FirstViewController.m */,
+				2558FE861AC84DB2002FDD2A /* SongCell.h */,
+				2558FE871AC84DB2002FDD2A /* SongCell.m */,
 				419845DA1AC7A57F004EF7C3 /* SecondViewController.h */,
 				419845DB1AC7A57F004EF7C3 /* SecondViewController.m */,
 				41F7AF321AC7BFF6009EC6E0 /* ComposeViewController.h */,
@@ -1061,7 +1072,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2558FE831AC7E74C002FDD2A /* SongCell.xib in Resources */,
 				419845DF1AC7A57F004EF7C3 /* Main.storyboard in Resources */,
+				2558FE851AC7E795002FDD2A /* placeholder.png in Resources */,
 				419845E41AC7A57F004EF7C3 /* LaunchScreen.xib in Resources */,
 				419845E11AC7A57F004EF7C3 /* Images.xcassets in Resources */,
 			);
@@ -1124,6 +1137,7 @@
 				23A97E821AC7DF4300B9155A /* GTLYouTubeVideoFileDetails.m in Sources */,
 				23A97E871AC7DF4300B9155A /* GTLYouTubeVideoLiveStreamingDetails.m in Sources */,
 				23A97E501AC7DF4300B9155A /* GTLYouTubeLiveBroadcastContentDetails.m in Sources */,
+				2558FE881AC84DB2002FDD2A /* SongCell.m in Sources */,
 				23A97E231AC7DF4300B9155A /* GTLYouTubeActivityContentDetailsSubscription.m in Sources */,
 				41F7AF3B1AC7D43B009EC6E0 /* ResultsTableViewController.m in Sources */,
 				23A97E4A1AC7DF4300B9155A /* GTLYouTubeInvideoBranding.m in Sources */,

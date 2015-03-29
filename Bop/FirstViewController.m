@@ -7,11 +7,14 @@
 //
 
 #import "FirstViewController.h"
+#import "SongCell.h"
 #import <Parse/Parse.h>
 
 @interface FirstViewController ()
-
 @end
+
+NSString *const tableCellNibName = @"SongCell";
+NSString *const cellID = @"SongCellID";
 
 @implementation FirstViewController
 
@@ -19,10 +22,38 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
     
+    // we use a nib which contains the cell's view and this class as the files owner
+    [self.tableView registerNib:[UINib nibWithNibName:tableCellNibName bundle:nil] forCellReuseIdentifier:cellID];
     
 //    PFObject *testObject = [PFObject objectWithClassName:@"TestObject"];
 //    testObject[@"foo"] = @"bar";
 //    [testObject saveInBackground];
+}
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    return 4;
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    return 70.0;
+}
+
+// This is where you set the cell's data
+- (void)tableView:(UITableView *)tableView willDisplayCell:(SongCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath {
+    cell.title.text = @"YTTitle";
+}
+
+// This returns the custom SongCell object
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    SongCell* cell = [tableView dequeueReusableCellWithIdentifier:cellID];
+    if (!cell)
+    {
+        [tableView registerNib:[UINib nibWithNibName:tableCellNibName bundle:nil] forCellReuseIdentifier:cellID];
+        cell = [tableView dequeueReusableCellWithIdentifier:cellID];
+    }
+    
+    return cell;
 }
 
 - (void)didReceiveMemoryWarning {
