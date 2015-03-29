@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		2558FE831AC7E74C002FDD2A /* SongCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2558FE821AC7E74C002FDD2A /* SongCell.xib */; };
-		2558FE851AC7E795002FDD2A /* placeholder.png in Resources */ = {isa = PBXBuildFile; fileRef = 2558FE841AC7E795002FDD2A /* placeholder.png */; };
 		2558FE881AC84DB2002FDD2A /* SongCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2558FE871AC84DB2002FDD2A /* SongCell.m */; };
 		419845D31AC7A57F004EF7C3 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 419845D21AC7A57F004EF7C3 /* main.m */; };
 		419845D61AC7A57F004EF7C3 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 419845D51AC7A57F004EF7C3 /* AppDelegate.m */; };
@@ -58,7 +57,6 @@
 
 /* Begin PBXFileReference section */
 		2558FE821AC7E74C002FDD2A /* SongCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SongCell.xib; sourceTree = "<group>"; };
-		2558FE841AC7E795002FDD2A /* placeholder.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = placeholder.png; sourceTree = "<group>"; };
 		2558FE861AC84DB2002FDD2A /* SongCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SongCell.h; sourceTree = "<group>"; };
 		2558FE871AC84DB2002FDD2A /* SongCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SongCell.m; sourceTree = "<group>"; };
 		419845CD1AC7A57F004EF7C3 /* Bop.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Bop.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -168,7 +166,6 @@
 		419845CF1AC7A57F004EF7C3 /* Bop */ = {
 			isa = PBXGroup;
 			children = (
-				2558FE841AC7E795002FDD2A /* placeholder.png */,
 				419845D41AC7A57F004EF7C3 /* AppDelegate.h */,
 				419845D51AC7A57F004EF7C3 /* AppDelegate.m */,
 				41D3D8CC1AC7E2DA006DE655 /* Classes */,
@@ -373,7 +370,6 @@
 			files = (
 				2558FE831AC7E74C002FDD2A /* SongCell.xib in Resources */,
 				419845DF1AC7A57F004EF7C3 /* Main.storyboard in Resources */,
-				2558FE851AC7E795002FDD2A /* placeholder.png in Resources */,
 				41D3D8D71AC7E693006DE655 /* PostTableViewCell.xib in Resources */,
 				419845E41AC7A57F004EF7C3 /* LaunchScreen.xib in Resources */,
 				41D3D8CF1AC7E341006DE655 /* SearchResultTableViewCell.xib in Resources */,
