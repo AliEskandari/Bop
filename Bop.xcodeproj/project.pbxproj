@@ -27,6 +27,7 @@
 		4198460C1AC7A96C004EF7C3 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4198460B1AC7A96C004EF7C3 /* StoreKit.framework */; };
 		4198460E1AC7A977004EF7C3 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 4198460D1AC7A977004EF7C3 /* libz.dylib */; };
 		419846101AC7A983004EF7C3 /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 4198460F1AC7A983004EF7C3 /* libsqlite3.dylib */; };
+		419846121AC7AD93004EF7C3 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 419846111AC7AD93004EF7C3 /* SystemConfiguration.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -67,6 +68,7 @@
 		4198460B1AC7A96C004EF7C3 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		4198460D1AC7A977004EF7C3 /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
 		4198460F1AC7A983004EF7C3 /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
+		419846111AC7AD93004EF7C3 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -74,6 +76,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				419846121AC7AD93004EF7C3 /* SystemConfiguration.framework in Frameworks */,
 				419846101AC7A983004EF7C3 /* libsqlite3.dylib in Frameworks */,
 				4198460E1AC7A977004EF7C3 /* libz.dylib in Frameworks */,
 				4198460C1AC7A96C004EF7C3 /* StoreKit.framework in Frameworks */,
@@ -102,6 +105,7 @@
 		419845C41AC7A57F004EF7C3 = {
 			isa = PBXGroup;
 			children = (
+				419846111AC7AD93004EF7C3 /* SystemConfiguration.framework */,
 				4198460F1AC7A983004EF7C3 /* libsqlite3.dylib */,
 				4198460D1AC7A977004EF7C3 /* libz.dylib */,
 				4198460B1AC7A96C004EF7C3 /* StoreKit.framework */,
