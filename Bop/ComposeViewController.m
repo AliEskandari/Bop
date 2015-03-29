@@ -8,9 +8,11 @@
 
 #import "ComposeViewController.h"
 #import "ResultsTableViewController.h"
-#import "Video.h"
 
 #import <Parse/Parse.h>
+
+NSString *const kPostTableViewCellIdentifier = @"pCellID";
+NSString *const kPostTableViewCellNibName = @"PostTableViewCell";
 
 @interface ComposeViewController () <UISearchBarDelegate, UISearchControllerDelegate, UISearchResultsUpdating, UITableViewDelegate>
 @property (nonatomic, strong) UISearchController *searchController;
@@ -32,11 +34,13 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
     
+    // we use a nib which contains the cell's view and this class as the files owner
+    [self.tableView registerNib:[UINib nibWithNibName:kPostTableViewCellNibName bundle:nil] forCellReuseIdentifier:kPostTableViewCellIdentifier];
+    
     _resultsTableViewController = [[ResultsTableViewController alloc] init];
     _searchController = [[UISearchController alloc] initWithSearchResultsController: self.resultsTableViewController];
     self.searchController.searchResultsUpdater = self;
     [self.searchController.searchBar sizeToFit];
-    [self.view addSubview: self.searchController.searchBar];
     self.tableView.tableHeaderView = self.searchController.searchBar;
     self.searchController.hidesNavigationBarDuringPresentation = true;
 
@@ -61,6 +65,10 @@
 
 - (IBAction)OnCancelPressed:(id)sender {
     [self dismissViewControllerAnimated:true completion:nil];
+}
+
+- (void)configureCell:(PostTableViewCell *)cell forVideo:(Video *)video {
+    cell.titleLabel.text = video.title;
 }
 
 #pragma mark - UISearchControllerDelegate
@@ -96,16 +104,16 @@
 #pragma mark - UITableViewDelegate
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return self.videos.count;
+    return 1;
 }
 
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-//    UITableViewCell *cell = (UITableViewCell *)[self.tableView dequeueReusableCellWithIdentifier:kCellIdentifier forIndexPath:indexPath];
+- (PostTableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    PostTableViewCell *cell = (PostTableViewCell *)[self.tableView dequeueReusableCellWithIdentifier:kPostTableViewCellIdentifier forIndexPath:indexPath];
     
-//    Video *video = self.products[indexPath.row];
-//    [self configureCell:cell forVideo:video];
-//    
-    return nil;
+    Video *video = self.video;
+    [self configureCell:cell forVideo:video];
+
+    return cell;
 }
 
 // here we are the table view delegate for both our main table and filtered table, so we can
@@ -236,14 +244,18 @@
                                        if (error == nil) {
                                            GTLYouTubeSearchListResponse *videos = object;
                                            NSArray *items = videos.items;  // of GTLYouTubeSearchResult
+                                           
                                            for (GTLYouTubeSearchResult *result in items) {
                                                NSString *title = result.snippet.title;
                                                NSString *img = result.snippet.thumbnails.defaultProperty.url;
                                                NSDateComponents *publishedAt = result.snippet.publishedAt.dateComponents;
-                                               
-                                               
+                                    
                                                NSLog(@"%@", img);
                                            }
+                                           
+                                           ResultsTableViewController *tableController = (ResultsTableViewController *)self.searchController.searchResultsController;
+                                           tableController.filteredVideos = items;
+                                           [tableController.tableView reloadData];
                                        }
                                    }];
 }

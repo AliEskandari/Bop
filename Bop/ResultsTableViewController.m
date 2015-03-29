@@ -12,14 +12,20 @@
  */
 
 #import "ResultsTableViewController.h"
+#import "SearchResultTableViewCell.h"
 #import "Video.h"
 
+NSString *const kSearchResultTableViewCellIdentifier = @"rCellID";
+NSString *const kSearchResultTableViewCellNibName = @"SearchResultTableViewCell";
 
 @implementation ResultsTableViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    
+    // we use a nib which contains the cell's view and this class as the files owner
+    [self.tableView registerNib:[UINib nibWithNibName:kSearchResultTableViewCellNibName bundle:nil] forCellReuseIdentifier:kSearchResultTableViewCellIdentifier];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -31,13 +37,19 @@
     return self.filteredVideos.count;
 }
 
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = (UITableViewCell *)[self.tableView dequeueReusableCellWithIdentifier:kCellIdentifier];
+- (SearchResultTableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    SearchResultTableViewCell *cell = (SearchResultTableViewCell *)[self.tableView dequeueReusableCellWithIdentifier:kSearchResultTableViewCellIdentifier];
     
-    Video *video = self.filteredVideos[indexPath.row];
+    GTLYouTubeSearchResult *result = self.filteredVideos[indexPath.row];
+    Video *video = [Video videoWithTitle:result.snippet.title];
+    
     [self configureCell:cell forVideo:video];
-    
+
     return cell;
+}
+
+- (void)configureCell:(SearchResultTableViewCell *)cell forVideo:(Video *)video {
+    cell.titleLabel.text = video.title;
 }
 
 /*

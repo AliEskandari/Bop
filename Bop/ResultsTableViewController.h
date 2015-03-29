@@ -6,9 +6,10 @@
 //  Copyright (c) 2015 jab. All rights reserved.
 //
 
-#import "BaseTableViewController.h"
+#import <UIKit/UIKit.h>
+#import "GTLYouTube.h"
 
-@interface ResultsTableViewController : BaseTableViewController
+@interface ResultsTableViewController : UITableViewController
 
 @property (nonatomic, strong) NSArray *filteredVideos;
 

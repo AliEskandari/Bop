@@ -10,14 +10,16 @@
 #define Bop_ComposeViewController_h
 
 #import <UIKit/UIKit.h>
-#import "BaseTableViewController.h"
+#import "PostTableViewCell.h"
+#import "Video.h"
 #import "GTLYouTube.h"
 
-@interface ComposeViewController : BaseTableViewController
+@interface ComposeViewController : UITableViewController
 
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *CancelButton;
-@property (nonatomic, copy) NSArray *videos;
+@property (nonatomic, copy) Video *video;
 
+- (void)configureCell:(PostTableViewCell *)cell forVideo:(Video *)video;
 - (IBAction)OnCancelPressed:(id)sender;
 
 @end
