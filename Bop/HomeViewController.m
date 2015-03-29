@@ -10,7 +10,7 @@
 #import "SongCell.h"
 #import <Parse/Parse.h>
 
-@interface HomeViewController ()
+@interface HomeViewController () <MCSwipeTableViewCellDelegate>
 @end
 
 NSString *const tableCellNibName = @"SongCell";
@@ -38,6 +38,20 @@ NSString *const cellID = @"SongCellID";
 // This is where you set the cell's data
 - (void)tableView:(UITableView *)tableView willDisplayCell:(SongCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath {
     cell.title.text = @"YTTitle";
+    
+    UIView *checkView = [self viewWithImageName:@"check"];
+    UIColor *greenColor = [UIColor colorWithRed:85.0 / 255.0 green:213.0 / 255.0 blue:80.0 / 255.0 alpha:1.0];
+    
+    [cell setSwipeGestureWithView:checkView color:greenColor mode:MCSwipeTableViewCellModeSwitch state:MCSwipeTableViewCellState3 completionBlock:^(MCSwipeTableViewCell *cell, MCSwipeTableViewCellState state, MCSwipeTableViewCellMode mode) {
+        NSLog(@"Saved song");
+    }];
+}
+
+- (UIView *)viewWithImageName:(NSString *)imageName {
+    UIImage *image = [UIImage imageNamed:imageName];
+    UIImageView *imageView = [[UIImageView alloc] initWithImage:image];
+    imageView.contentMode = UIViewContentModeCenter;
+    return imageView;
 }
 
 // This returns the custom SongCell object

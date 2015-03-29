@@ -7,8 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "MCSwipeTableViewCell.h"
 
-@interface SongCell : UITableViewCell
+@interface SongCell : MCSwipeTableViewCell
 @property (weak, nonatomic) IBOutlet UILabel *title;
 @property (weak, nonatomic) IBOutlet UIImageView *image;
 
