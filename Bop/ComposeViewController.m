@@ -8,15 +8,20 @@
 
 #import "ComposeViewController.h"
 #import "ResultsTableViewController.h"
-#import "Video.h"
 
 #import <Parse/Parse.h>
+
+NSString *const kPostTableViewCellIdentifier = @"pCellID";
+NSString *const kPostTableViewCellNibName = @"PostTableViewCell";
 
 @interface ComposeViewController () <UISearchBarDelegate, UISearchControllerDelegate, UISearchResultsUpdating, UITableViewDelegate>
 @property (nonatomic, strong) UISearchController *searchController;
 
 // our secondary search results table view
 @property (nonatomic, strong) ResultsTableViewController *resultsTableViewController;
+
+// Accessor for the app's single instance of the service object.
+@property (nonatomic, readonly) GTLServiceYouTube *youTubeService;
 
 // for state restoration
 @property BOOL searchControllerWasActive;
@@ -29,11 +34,13 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
     
+    // we use a nib which contains the cell's view and this class as the files owner
+    [self.tableView registerNib:[UINib nibWithNibName:kPostTableViewCellNibName bundle:nil] forCellReuseIdentifier:kPostTableViewCellIdentifier];
+    
     _resultsTableViewController = [[ResultsTableViewController alloc] init];
     _searchController = [[UISearchController alloc] initWithSearchResultsController: self.resultsTableViewController];
     self.searchController.searchResultsUpdater = self;
     [self.searchController.searchBar sizeToFit];
-    [self.view addSubview: self.searchController.searchBar];
     self.tableView.tableHeaderView = self.searchController.searchBar;
     self.searchController.hidesNavigationBarDuringPresentation = true;
 
@@ -58,6 +65,10 @@
 
 - (IBAction)OnCancelPressed:(id)sender {
     [self dismissViewControllerAnimated:true completion:nil];
+}
+
+- (void)configureCell:(PostTableViewCell *)cell forVideo:(Video *)video {
+    cell.titleLabel.text = video.title;
 }
 
 #pragma mark - UISearchControllerDelegate
@@ -93,16 +104,16 @@
 #pragma mark - UITableViewDelegate
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return self.videos.count;
+    return 1;
 }
 
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-//    UITableViewCell *cell = (UITableViewCell *)[self.tableView dequeueReusableCellWithIdentifier:kCellIdentifier forIndexPath:indexPath];
+- (PostTableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    PostTableViewCell *cell = (PostTableViewCell *)[self.tableView dequeueReusableCellWithIdentifier:kPostTableViewCellIdentifier forIndexPath:indexPath];
     
-//    Video *video = self.products[indexPath.row];
-//    [self configureCell:cell forVideo:video];
-//    
-    return nil;
+    Video *video = self.video;
+    [self configureCell:cell forVideo:video];
+
+    return cell;
 }
 
 // here we are the table view delegate for both our main table and filtered table, so we can
@@ -214,5 +225,70 @@
 
 - (void)searchBarSearchButtonClicked:(UISearchBar *)searchBar {
     [searchBar resignFirstResponder];
+
+    NSString *searchText = searchBar.text;
+    // strip out all the leading and trailing spaces
+    NSString *strippedString = [searchText stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]];
+    
+    // Create a service object for executing queries
+    GTLServiceYouTube *service = self.youTubeService;
+    
+    // Create a query
+    GTLQueryYouTube *query = [GTLQueryYouTube queryForSearchListWithPart:@"snippet"];
+    query.q = strippedString;
+    query.maxResults = 15;
+    // Execute the query
+    GTLServiceTicket *ticket = [service executeQuery:query
+                                   completionHandler:^(GTLServiceTicket *ticket, id object, NSError *error) {
+                                       // This callback block is run when the fetch completes
+                                       if (error == nil) {
+                                           GTLYouTubeSearchListResponse *videos = object;
+                                           NSArray *items = videos.items;  // of GTLYouTubeSearchResult
+                                           
+                                           for (GTLYouTubeSearchResult *result in items) {
+                                               NSString *title = result.snippet.title;
+                                               NSString *img = result.snippet.thumbnails.defaultProperty.url;
+                                               NSDateComponents *publishedAt = result.snippet.publishedAt.dateComponents;
+                                    
+                                               NSLog(@"%@", img);
+                                           }
+                                           
+                                           ResultsTableViewController *tableController = (ResultsTableViewController *)self.searchController.searchResultsController;
+                                           tableController.filteredVideos = items;
+                                           [tableController.tableView reloadData];
+                                       }
+                                   }];
 }
+
+
+// Get a service object
+//
+// A "service" object handles networking tasks.  Service objects
+// contain user authentication information as well as networking
+// state information such as cookies set by the server in response
+// to queries.
+
+- (GTLServiceYouTube *)youTubeService {
+    static GTLServiceYouTube *service;
+    
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        service = [[GTLServiceYouTube alloc] init];
+        
+        // Have the service object set tickets to fetch consecutive pages
+        // of the feed so we do not need to manually fetch them.
+        //service.shouldFetchNextPages = YES;
+        
+        // Have the service object set tickets to retry temporary error conditions
+        // automatically.
+        service.retryEnabled = YES;
+        
+        // Services which do not require sign-in may need an API key from the
+        // API Console
+        service.APIKey = @"AIzaSyAPGx5PbhdoO2QTR16yZHgMj-Q2vqO8W1M";
+
+    });
+    return service;
+}
+
 @end

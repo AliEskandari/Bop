@@ -22,9 +22,6 @@ NSString *const cellID = @"SongCellID";
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
     
-    // we use a nib which contains the cell's view and this class as the files owner
-    [self.tableView registerNib:[UINib nibWithNibName:tableCellNibName bundle:nil] forCellReuseIdentifier:cellID];
-    
 //    PFObject *testObject = [PFObject objectWithClassName:@"TestObject"];
 //    testObject[@"foo"] = @"bar";
 //    [testObject saveInBackground];

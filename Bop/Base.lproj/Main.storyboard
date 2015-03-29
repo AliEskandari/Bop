@@ -145,6 +145,7 @@
                                 <action selector="OnCancelPressed:" destination="yKp-X4-dQF" id="Mxu-ei-yec"/>
                             </connections>
                         </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="Send" id="fuc-V1-SGM"/>
                     </navigationItem>
                     <connections>
                         <outlet property="CancelButton" destination="UG1-J2-OIh" id="UoL-D1-VSz"/>
