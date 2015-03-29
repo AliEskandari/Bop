@@ -88,9 +88,9 @@
 		41D3D8D31AC7E693006DE655 /* PostTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PostTableViewCell.h; sourceTree = "<group>"; };
 		41D3D8D41AC7E693006DE655 /* PostTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PostTableViewCell.m; sourceTree = "<group>"; };
 		41D3D8D51AC7E693006DE655 /* PostTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PostTableViewCell.xib; sourceTree = "<group>"; };
-		41D3D8D91AC83DEF006DE655 /* GTLCommon_Sources.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GTLCommon_Sources.m; sourceTree = "<group>"; };
-		41D3D8DA1AC83DEF006DE655 /* GTLNetworking_Sources.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GTLNetworking_Sources.m; sourceTree = "<group>"; };
-		41D3D8DD1AC83EE4006DE655 /* GTLYouTube_Sources.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GTLYouTube_Sources.m; sourceTree = "<group>"; };
+		41D3D8D91AC83DEF006DE655 /* GTLCommon_Sources.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GTLCommon_Sources.m; path = ../GTLCommon_Sources.m; sourceTree = "<group>"; };
+		41D3D8DA1AC83DEF006DE655 /* GTLNetworking_Sources.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GTLNetworking_Sources.m; path = ../GTLNetworking_Sources.m; sourceTree = "<group>"; };
+		41D3D8DD1AC83EE4006DE655 /* GTLYouTube_Sources.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GTLYouTube_Sources.m; path = ../GTLYouTube_Sources.m; sourceTree = "<group>"; };
 		41F7AF281AC7BA7B009EC6E0 /* Accounts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accounts.framework; path = System/Library/Frameworks/Accounts.framework; sourceTree = SDKROOT; };
 		41F7AF2A1AC7BA85009EC6E0 /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
 		41F7AF301AC7BFCB009EC6E0 /* ComposeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ComposeViewController.m; sourceTree = "<group>"; };
@@ -141,9 +141,6 @@
 		419845C41AC7A57F004EF7C3 = {
 			isa = PBXGroup;
 			children = (
-				41D3D8DD1AC83EE4006DE655 /* GTLYouTube_Sources.m */,
-				41D3D8D91AC83DEF006DE655 /* GTLCommon_Sources.m */,
-				41D3D8DA1AC83DEF006DE655 /* GTLNetworking_Sources.m */,
 				419845CF1AC7A57F004EF7C3 /* Bop */,
 				419845EC1AC7A57F004EF7C3 /* BopTests */,
 				419845CE1AC7A57F004EF7C3 /* Products */,
@@ -178,6 +175,9 @@
 		419845D01AC7A57F004EF7C3 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				41D3D8DD1AC83EE4006DE655 /* GTLYouTube_Sources.m */,
+				41D3D8D91AC83DEF006DE655 /* GTLCommon_Sources.m */,
+				41D3D8DA1AC83DEF006DE655 /* GTLNetworking_Sources.m */,
 				419845E01AC7A57F004EF7C3 /* Images.xcassets */,
 				419845DD1AC7A57F004EF7C3 /* Main.storyboard */,
 				419845D11AC7A57F004EF7C3 /* Info.plist */,
@@ -553,12 +553,12 @@
 					"$(inherited)",
 					"\"${PODS_ROOT}/Headers/Public\"",
 					"\"${PODS_ROOT}/Headers/Public/youtube-ios-player-helper\"",
-					"\"/Users/Ali/Documents/Programs/Xcode/Bop/google-api-objectivec-client-read-only/Source/Services/Youtube/Generated\"",
-					"\"/Users/Ali/google-api-objectivec-client-read-only/Source/Objects\"",
-					"\"/Users/Ali/google-api-objectivec-client-read-only/Source/OAuth2\"",
-					"\"/Users/Ali/google-api-objectivec-client-read-only/Source\"",
-					"\"/Users/Ali/google-api-objectivec-client-read-only/Source/HTTPFetcher\"",
-					"\"/Users/Ali/google-api-objectivec-client-read-only/Source/Utilities\"",
+					"\"./google-api-objectivec-client-read-only/Source/Services/Youtube/Generated\"",
+					"\"./google-api-objectivec-client-read-only/Source/Objects\"",
+					"\"./google-api-objectivec-client-read-only/Source/OAuth2\"",
+					"\"./google-api-objectivec-client-read-only/Source\"",
+					"\"./google-api-objectivec-client-read-only/Source/HTTPFetcher\"",
+					"\"./google-api-objectivec-client-read-only/Source/Utilities\"",
 				);
 				INFOPLIST_FILE = Bop/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
@@ -591,12 +591,12 @@
 					"$(inherited)",
 					"\"${PODS_ROOT}/Headers/Public\"",
 					"\"${PODS_ROOT}/Headers/Public/youtube-ios-player-helper\"",
-					"\"/Users/Ali/Documents/Programs/Xcode/Bop/google-api-objectivec-client-read-only/Source/Services/Youtube/Generated\"",
-					"\"/Users/Ali/google-api-objectivec-client-read-only/Source/Objects\"",
-					"\"/Users/Ali/google-api-objectivec-client-read-only/Source/OAuth2\"",
-					"\"/Users/Ali/google-api-objectivec-client-read-only/Source\"",
-					"\"/Users/Ali/google-api-objectivec-client-read-only/Source/HTTPFetcher\"",
-					"\"/Users/Ali/google-api-objectivec-client-read-only/Source/Utilities\"",
+					"\"./google-api-objectivec-client-read-only/Source/Services/Youtube/Generated\"",
+					"\"./google-api-objectivec-client-read-only/Source/Objects\"",
+					"\"./google-api-objectivec-client-read-only/Source/OAuth2\"",
+					"\"./google-api-objectivec-client-read-only/Source\"",
+					"\"./google-api-objectivec-client-read-only/Source/HTTPFetcher\"",
+					"\"./google-api-objectivec-client-read-only/Source/Utilities\"",
 				);
 				INFOPLIST_FILE = Bop/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
