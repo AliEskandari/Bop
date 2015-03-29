@@ -16,7 +16,19 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view, typically from a nib.
+    NSString *videoId = @"L0MK7qz13bU";
+    
+    // For a full list of player parameters, see the documentation for the HTML5 player
+    // at: https://developers.google.com/youtube/player_parameters?playerVersion=HTML5
+    NSDictionary *playerVars = @{
+                                 @"controls" : @0,
+                                 @"playsinline" : @1,
+                                 @"autohide" : @1,
+                                 @"showinfo" : @0,
+                                 @"modestbranding" : @1
+                                 };
+    self.playerView.delegate = self;
+    [self.playerView loadWithVideoId:videoId playerVars:playerVars];
 }
 
 - (void)didReceiveMemoryWarning {

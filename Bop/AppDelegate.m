@@ -30,6 +30,10 @@
     // [Optional] Track statistics around application opens.
     [PFAnalytics trackAppOpenedWithLaunchOptions:launchOptions];
     
+    //set playback category to play even in the background
+    NSError *setCategoryError = nil;
+    [[AVAudioSession sharedInstance] setCategory: AVAudioSessionCategoryPlayback error: &setCategoryError];
+    [[UIApplication sharedApplication] beginReceivingRemoteControlEvents];
     return YES;
 }
 

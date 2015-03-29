@@ -335,6 +335,11 @@
 					419845CC1AC7A57F004EF7C3 = {
 						CreatedOnToolsVersion = 6.2;
 						DevelopmentTeam = DKZM2Q2FGA;
+						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
+						};
 					};
 					419845E81AC7A57F004EF7C3 = {
 						CreatedOnToolsVersion = 6.2;
