@@ -237,16 +237,19 @@
                                            GTLYouTubeSearchListResponse *videos = object;
                                            NSArray *items = videos.items;  // of GTLYouTubeSearchResult
                                            for (GTLYouTubeSearchResult *result in items) {
-                                               NSLog(@"%@", result.snippet.title);
+                                               NSString *title = result.snippet.title;
+                                               NSString *img = result.snippet.thumbnails.defaultProperty.url;
+                                               NSDateComponents *publishedAt = result.snippet.publishedAt.dateComponents;
+                                               
+                                               
+                                               NSLog(@"%@", img);
                                            }
                                        }
                                    }];
-  // should be doing something like this // GTLServiceYouTube *service = self.youTubeService;
-    
 }
 
 
-// Get a service object with the current username/password.
+// Get a service object
 //
 // A "service" object handles networking tasks.  Service objects
 // contain user authentication information as well as networking
