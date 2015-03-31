@@ -12,7 +12,8 @@
 
 @property (nonatomic, copy) NSString *title;
 @property (nonatomic, copy) NSURL *thumbnailURL;
+@property (nonatomic, copy) NSString *duration;
 
-+ (Video *)videoWithTitle:(NSString *)title thumbnailURL:(NSURL *) thumbnailURL;
++ (Video *)videoWithTitle:(NSString *)title thumbnailURL:(NSURL *) thumbnailURL duration:(NSString *) duration;
 
 @end

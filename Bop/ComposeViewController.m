@@ -241,30 +241,32 @@ NSString *const kPostTableViewCellNibName = @"PostTableViewCell";
     GTLServiceYouTube *service = self.youTubeService;
     
     // Create a query
-    GTLQueryYouTube *query = [GTLQueryYouTube queryForSearchListWithPart:@"snippet"];
+    GTLQueryYouTube *query = [GTLQueryYouTube queryForSearchListWithPart:@"id,snippet"];
     query.q = strippedString;
     query.maxResults = 15;
+    query.fields = @"items(id,snippet)";
+    
     // Execute the query
-    GTLServiceTicket *ticket = [service executeQuery:query
-                                   completionHandler:^(GTLServiceTicket *ticket, id object, NSError *error) {
-                                       // This callback block is run when the fetch completes
-                                       if (error == nil) {
-                                           GTLYouTubeSearchListResponse *videos = object;
-                                           NSArray *items = videos.items;  // of GTLYouTubeSearchResult
-                                           
-                                           for (GTLYouTubeSearchResult *result in items) {
-                                               NSString *title = result.snippet.title;
-                                               NSString *img = result.snippet.thumbnails.defaultProperty.url;
-                                               NSDateComponents *publishedAt = result.snippet.publishedAt.dateComponents;
-                                    
-                                               NSLog(@"%@", img);
-                                           }
-                                           
-                                           ResultsTableViewController *tableController = (ResultsTableViewController *)self.searchController.searchResultsController;
-                                           tableController.filteredVideos = items;
-                                           [tableController.tableView reloadData];
-                                       }
-                                   }];
+    [service executeQuery:query
+        completionHandler:^(GTLServiceTicket *ticket, id object, NSError *error) {
+            // This callback block is run when the fetch completes
+            if (error == nil) {
+                GTLYouTubeSearchListResponse *response = object;
+                NSArray *items = response.items;  // of GTLYouTubeSearchResult
+                
+                for (GTLYouTubeSearchResult *result in items) {
+                    NSString *title = result.snippet.title;
+                    NSString *img = result.snippet.thumbnails.defaultProperty.url;
+                    NSDateComponents *publishedAt = result.snippet.publishedAt.dateComponents;
+                    
+//                    NSLog(@"%@", result.identifier.videoId);
+                }
+                
+                ResultsTableViewController *tableController = (ResultsTableViewController *)self.searchController.searchResultsController;
+                tableController.youtubeSearchResults = items;
+                [tableController.tableView reloadData];
+            }
+        }];
 }
 
 

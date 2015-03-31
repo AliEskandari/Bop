@@ -11,6 +11,7 @@
 
 @interface ResultsTableViewController : UITableViewController
 
-@property (nonatomic, strong) NSArray *filteredVideos;
+@property (nonatomic, strong) NSArray *youtubeSearchResults;
+@property (nonatomic, strong) NSMutableArray *videos;
 
 @end

@@ -15,8 +15,14 @@
                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Wfz-U5-CNR">
                         <rect key="frame" x="8" y="10" width="60" height="60"/>
                     </imageView>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="B31-WJ-Sys">
-                        <rect key="frame" x="76" y="10" width="152" height="21"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Duration" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9zA-AP-9iO">
+                        <rect key="frame" x="76" y="40" width="236" height="21"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="B31-WJ-Sys">
+                        <rect key="frame" x="76" y="11" width="236" height="21"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                         <nil key="highlightedColor"/>
@@ -24,10 +30,11 @@
                 </subviews>
             </tableViewCellContentView>
             <connections>
+                <outlet property="durationLabel" destination="9zA-AP-9iO" id="TBX-Sp-yU3"/>
                 <outlet property="titleLabel" destination="B31-WJ-Sys" id="GGL-oK-Ai0"/>
                 <outlet property="videoThumbnailImageView" destination="Wfz-U5-CNR" id="lCp-JJ-gep"/>
             </connections>
-            <point key="canvasLocation" x="536" y="419"/>
+            <point key="canvasLocation" x="536" y="417"/>
         </tableViewCell>
     </objects>
 </document>

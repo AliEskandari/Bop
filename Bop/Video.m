@@ -9,10 +9,11 @@
 #import "Video.h"
 
 @implementation Video
-+ (Video *)videoWithTitle:(NSString *)title thumbnailURL:(NSURL *)thumbnailURL {
++ (Video *)videoWithTitle:(NSString *)title thumbnailURL:(NSURL *)thumbnailURL duration:(NSString *)duration {
     Video *newVideo = [[self alloc] init];
     newVideo.title = title;
     newVideo.thumbnailURL = thumbnailURL;
+    newVideo.duration = duration;
 
     return newVideo;
 }
